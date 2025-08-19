@@ -26,3 +26,7 @@
 - JavaScript - валидация формы, обработка событий
 - SVG - векторные изображения и иконки
 
+
+Деплой
+Осуществлён на netlify.com:
+[https://64d66b369fe82309b12beb0c--magnificent-marzipan-eb46f9.netlify.app/](https://68a482899e06be00a37a5185--subscribeguard.netlify.app/)
