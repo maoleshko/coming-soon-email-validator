@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+ 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" type="image/png" href="./public/images/favicon-32x32.png" sizes="32x32">
+
+  <title>Frontend Mentor | Base Apparel coming soon page</title>
+
+</head>
+<body>
+   <div class="card-container">
+        <!-- Левая часть: лого, заголовок, текст, форма -->
+        <div class="left-side">
+          <div class="logo-container">
+            <img class="logo" src="./public/images/logo.svg" alt="logo">
+          </div>
+    
+          <img class="mobile-image" src="./public/images/hero-mobile.jpg" alt="Mobile Hero">
+          
+          <div class="content-container">
+              <h1>We're</h1>
+              <h2>coming<br>soon</h2>
+              <p class="text">
+                    Hello fellow shoppers! We're currently building our new fashion store. 
+                    Add your email below to stay up-to-date with announcements and our launch deals.
+              </p>
+              <form class="emailForm" novalidate>
+                    <div class="form-group">
+                        <input type="email" id="email" class="form-input" placeholder="Email Address" required>
+                        <button type="submit" class="submit-btn">></button>
+                    </div>
+                  <div id="emailError" class="error-message"></div>
+              </form>
+          </div>
+            
+        </div>
+        
+        <!-- Правая часть: картинка (только для десктопа) -->
+        <div class="right-side">
+            <img class="model" src="./public/images/hero-desktop.jpg" alt="Model"> 
+        </div>
+    </div>
+
+  <!-- <footer>
+    <p class="attribution">
+       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor></a>. 
+      Coded by <a href="#">Your Name Here</a>. 
+    </p>
+  </footer> -->
+
+ <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.querySelector('.emailForm');
+      const emailInput = document.getElementById('email');
+      const errorElement = document.getElementById('emailError');
+      
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Сброс предыдущих ошибок
+        emailInput.classList.remove('error');
+        errorElement.classList.remove('show');
+        errorElement.textContent = '';
+        
+        // Проверка на пустое поле
+        if (emailInput.value.trim() === '') {
+          showError('Email is required');
+          return;
+        }
+        
+        // Проверка формата email
+        if (!validateEmail(emailInput.value)) {
+          showError('Please enter a valid email');
+          return;
+        }
+        
+        // Если все проверки пройдены
+        alert('Thank you! We\'ll notify you when we launch.');
+        emailInput.value = '';
+      });
+      
+      // Сбрасываем ошибку при начале ввода
+      emailInput.addEventListener('input', function() {
+        if (this.classList.contains('error')) {
+          this.classList.remove('error');
+          errorElement.classList.remove('show');
+        }
+      });
+      
+      function showError(message) {
+        emailInput.classList.add('error');
+        errorElement.textContent = message;
+        errorElement.classList.add('show');
+        emailInput.focus();
+      }
+      
+      function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+      }
+    });
+  </script>
+</body>
+</html>

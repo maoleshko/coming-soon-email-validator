@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+          body {
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 16px;
+            min-height: 100vh;
+            background-image: url('./public/images/bg-pattern-desktop.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+}
+
+       
+        .card-container {
+            display: flex;
+            min-height: 100vh;
+        }
+        
+        /* Левая часть (контент) */
+        .left-side {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: url('./images/bg-pattern-desktop.svg');
+            background-size: cover;
+            flex: 1.2;
+        }
+        
+        .logo {
+            margin-bottom: 4rem;
+            width: 150px;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 0.5rem;
+            color: hsl(0, 36%, 70%);
+        }
+        
+        h2 {
+            font-size: 3.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5rem;
+            color: hsl(0, 6%, 24%);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+        
+        .text {
+            color: hsl(0, 36%, 70%);
+            margin-bottom: 2rem;
+            max-width: 400px;
+            line-height: 1.6;
+        }
+        
+        /* Форма */
+        .form-group {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            border: 1px solid hsl(0, 36%, 85%);
+            border-radius: 30px;
+            padding: 15px 10px 15px 20px;
+        }
+        
+        .form-input {
+            width: 80%;
+            border: none;
+            outline: none;
+            background: transparent;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        
+        .form-input::placeholder {
+            color: hsl(0, 36%, 85%);
+        }
+        
+        .form-input.error {
+            border-color: hsl(0, 93%, 68%);
+        }
+        
+        .submit-btn {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 70px;
+            background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px hsla(0, 36%, 70%, 0.5);
+            transition: opacity 0.3s;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .submit-btn:hover {
+            opacity: 0.8;
+        }
+        
+        .error-message {
+            color: hsl(0, 93%, 68%);
+            margin-top: 0.5rem;
+            padding-left: 1.5rem;
+            font-size: 0.9rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .error-message.show {
+            opacity: 1;
+        }
+        
+        
+        /* Правая часть (изображение) */
+        .right-side {
+            flex: 1;
+        }
+        
+        .model {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        /* Мобильная версия */
+        @media (max-width: 768px) {
+            .card-container {
+                flex-direction: column;
+            }
+            
+            .left-side {
+        padding: 1rem 1.5rem;
+        align-items: center; /* Центрируем содержимое по умолчанию */
+        text-align: center; /* Центрируем текст */
+    }
+
+      .logo-container {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start; /* Логотип слева */
+        
+    }
+    
+    .content-container {
+        width: 100%;
+        text-align: center; /* Весь контент по центру */
+    }
+    
+              
+           .logo {
+        margin: 2rem 0 1rem 0; /* Логотип без автоматических отступов */
+        width: 120px;
+        align-self: flex-start; /* Только логотип прижимаем к левому краю */
+        margin-left: 1.5rem; /* Добавляем отступ слева */
+    }
+
+            .mobile-image {
+                
+                margin-bottom: 2rem;
+                width: 100vw; /* Ширина на весь видимый экран */
+        margin-left: calc(-1 * var(--side-padding)); /* Компенсируем padding контейнера */
+        margin-right: calc(-1 * var(--side-padding));
+        height: auto; /* Сохраняем пропорции */
+        max-height: 300px; /* Ограничиваем максимальную высоту */
+        object-fit: cover; /* Заполняем область без искажений */
+        display: block;
+            }
+
+
+            
+            h1, h2 {
+                font-size: 2.5rem;
+                margin-top: 1rem;
+                position: static;
+               
+      
+            }
+            
+            .right-side {
+                display: none;
+            }
+            
+            .form-group {
+                padding: 12px 0px ;
+            }
+        }
+        
+        /* Десктопная версия */
+        @media (min-width: 769px) {
+            .left-side {
+                padding: 4rem 8rem;
+            }
+            
+            .right-side {
+                flex: 1;
+            }
+            
+            .mobile-image {
+                display: none;
+            }
+        }
