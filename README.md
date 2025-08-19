@@ -1,1 +1,3 @@
-# coming-soon-email-validator
+# SubscribeGuard - Coming Soon Page with Email Validation
+
+Адаптивная страница "Скоро запуск" с валидацией email...
